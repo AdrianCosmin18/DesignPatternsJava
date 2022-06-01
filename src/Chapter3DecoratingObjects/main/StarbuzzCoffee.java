@@ -11,6 +11,21 @@ import Chapter3DecoratingObjects.classes.condiments.Whip;
 public class StarbuzzCoffee {
 
     public static void main(String[] args) {
+
+
+//        Beverage beverage123= new Beverage() {
+//            @Override
+//            public double cost() {
+//                return 0;
+//            }
+//
+//
+//        };
+//
+//        System.out.println(be);
+
+
+
         //nu inteleg inca cum calculeaza
 
         Beverage beverage = new Espresso("TALL");//ordered an espresso, no condiments
