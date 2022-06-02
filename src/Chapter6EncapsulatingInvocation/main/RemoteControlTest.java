@@ -7,7 +7,7 @@ public class RemoteControlTest {
     public static void main(String[] args) {
 
         SimpleRemoteControl remote = new SimpleRemoteControl();
-        Light light = new Light();
+        Light light = new Light("white light");
 
         GarageDoor garageDoor = new GarageDoor();
         LightOnCommand lightOn = new LightOnCommand(light);

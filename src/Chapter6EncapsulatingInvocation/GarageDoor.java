@@ -3,19 +3,30 @@ package Chapter6EncapsulatingInvocation;
 public class GarageDoor {
 
     private LightOnCommand lightOnCommand;
+    private LightOffCommand lightOffCommand;
+    private boolean doorUp;
 
-    public GarageDoor(LightOnCommand lightOnCommand){
+    public GarageDoor(LightOnCommand lightOnCommand, LightOffCommand lightOffCommand){
 
         this.lightOnCommand = lightOnCommand;
+        this.lightOffCommand = lightOffCommand;
+        doorUp = false;
     }
 
     public GarageDoor(){
 
-        lightOnCommand = new LightOnCommand(new Light());
+        doorUp = false;
+        lightOnCommand = new LightOnCommand(new Light("Garage Light"));
     }
 
-    public void up(){}
-    public void down(){}
+    public void up(){
+
+        doorUp = true;
+    }
+    public void down(){
+
+        doorUp = false;
+    }
     public void stop(){}
     public void lightOn(){
 
@@ -23,6 +34,6 @@ public class GarageDoor {
     }
     public void lightOff(){
 
-        lightOnCommand.light.off();
+        lightOffCommand.light.off();
     }
 }
