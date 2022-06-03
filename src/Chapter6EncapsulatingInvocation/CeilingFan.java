@@ -2,39 +2,54 @@ package Chapter6EncapsulatingInvocation;
 
 public class CeilingFan {
 
-    private String room;
-    private boolean activate;
+    private String location;
+    private int speed;
 
-    public CeilingFan(String room){
+    public static final int HIGH = 3;
+    public static final int MEDIUM = 2;
+    public static final int LOW = 1;
+    public static final int OFF = 0;
 
-        this.room = room;
-        activate = false;
+
+    public CeilingFan(String location){
+
+        this.location = location;
+        speed = OFF;
     }
-
 
     public void on(){
 
-        activate = true;
+        speed = LOW;
     }
 
     public void off(){
 
-        activate = false;
+        speed = OFF;
     }
 
-    public String getRoom() {
-        return room;
+    public String getLocation() {
+        return location;
     }
 
-    public void setRoom(String room) {
-        this.room = room;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public boolean isActivate() {
-        return activate;
+
+    public void high(){
+
+        speed = HIGH;
     }
 
-    public void setActivate(boolean activate) {
-        this.activate = activate;
+    public void medium(){
+
+        speed = MEDIUM;
     }
+
+    public void low(){
+
+        speed = LOW;
+    }
+
+    public int getSpeed(){return speed;}
 }
