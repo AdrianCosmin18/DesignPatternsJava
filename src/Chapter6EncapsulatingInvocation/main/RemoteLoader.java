@@ -64,5 +64,16 @@ public class RemoteLoader {
 
 
 
+
+
+
+        CeilingFanHighCommand ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+        remoteControl.setCommand(0, ceilingFanHigh, ceilingFanOffCommand);
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+
     }
 }
